@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA IMC OPTIMIZADO</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<hr>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+
+    // Optimización de forma larga 
+
+    function calcularImc(peso1,altura1,nombre1,peso2,altura2,nombre2) {
+        let imc1 = peso1/Math.pow(altura1,2);
+        let imc2 = peso2/Math.pow(altura2,2);
+        imprimir('El promedio del IMC calculado de '+nombre1+' y '+nombre2+' es: ' + (imc1+imc2)/2);
+    }
+
+    calcularImc(65,1.69,'Felipe',75,1.73,'Christian');
+    calcularImc(60,1.7,'Gabriela',55,1.60,'Luisa');
+
+    function calcularImcOptimizado(peso,altura,nombre) {
+        return peso/Math.pow(altura,2);
+    }
+
+    let imcFelipe = calcularImcOptimizado(65,1.69,'Felipe');
+    let imcChristian = calcularImcOptimizado(75,1.73,'Christian');
+
+    imprimir(`El promedio del IMC calculado de Felipe y Christian es: ${(imcChristian+imcFelipe)/2}`);
+</script>

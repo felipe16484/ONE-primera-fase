@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA IMC</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+    function calcularImc(peso,altura,nombre) {
+        let imc = peso/Math.pow(altura,2);
+        imprimir('El IMC (con función) de '+nombre+' es: ' + Math.round(imc));
+    }
+    
+    let pesoFelipe = 65;
+    let alturaFelipe = 1.69;
+    let imcFelipe = pesoFelipe/Math.pow(alturaFelipe,2);
+
+    imprimir('El IMC de Felipe es: ' + Math.round(imcFelipe));
+
+    let pesoChristian = 71;
+    let alturaChristian = 1.72;
+    let imcChristian = pesoChristian/Math.pow(alturaChristian,2);
+
+    imprimir('El IMC de Christian es: ' + Math.round(imcChristian));
+
+
+    calcularImc(65,1.69,'Felipe');
+    calcularImc(71,1.72,'Christian');
+</script>

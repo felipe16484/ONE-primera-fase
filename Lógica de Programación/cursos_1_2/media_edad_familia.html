@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA CALCULAR LAS TABLAS DE MULTIPLICAR</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+
+    let miembros = parseInt(prompt('Digite la cantidad de miembros de la familia:')); 
+    let contador = 1;
+    let totalEdades = 0;
+    
+    while (contador <= miembros) {
+        let edad = parseInt(prompt('Digite la edad del familiar:'));
+        totalEdades = totalEdades + edad;
+        contador++; 
+    }
+    
+    let mediaEdades = totalEdades/miembros;
+
+    imprimir('La media de las edades de la familia es: '+mediaEdades);
+    imprimir('Fin.');
+</script>

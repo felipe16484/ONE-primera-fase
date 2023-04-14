@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA CALCULAR LAS TABLAS DE MULTIPLICAR</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+
+    let multiplicador = 1;
+
+    imprimir('Ciclo WHILE:');
+    while (multiplicador < 11) {
+        imprimir(5 * multiplicador);
+        multiplicador++;
+    }
+
+    imprimir('Ciclo FOR:');
+    for (let i = 0; i < 10; i++) {
+        imprimir(5*i);
+    }
+</script>

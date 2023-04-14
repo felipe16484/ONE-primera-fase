@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA CALCULAR LAS TABLAS DE MULTIPLICAR</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+
+    let contador = 1;
+    
+    while (contador <= 100) {
+
+        if (contador % 2 == 0){
+            imprimir('El número actual es   ----> '+contador);
+        }
+        contador++;
+    }
+    imprimir('Fin.');
+</script>

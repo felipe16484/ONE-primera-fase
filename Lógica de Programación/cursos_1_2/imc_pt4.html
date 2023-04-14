@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA IMC USANDO CONDICIONES</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");
+    }  
+    function imprimir(frase) {
+        document.write(`${frase}`);
+        saltarLinea();
+    }
+
+    function calcularImc(peso,altura,nombre) {
+        return peso/Math.pow(altura,2);
+    }
+
+    let nombreIngresado = prompt('Digite su nombre:');
+    let pesoIngresado = prompt(nombreIngresado+', digite su peso:');
+    let alturaIngresado = prompt(nombreIngresado+', digite su altura:');
+
+    let imcCalculado = calcularImc(pesoIngresado,alturaIngresado);
+
+    imprimir(`${nombreIngresado}, su IMC calculado es: ${imcCalculado}`);
+    document.write("<hr>");    
+
+
+    if (imcCalculado < 18.5 ) {
+        imprimir('IMC considerado como <i>Insuficiencia Ponderal</i>');
+    }
+    if (imcCalculado >= 18.5 && imcCalculado < 25 ) {
+        imprimir('IMC considerado como <i>Normal</i>');
+    }
+    if (imcCalculado >= 25 && imcCalculado < 30) {
+        imprimir('IMC considerado como <i>Sobrepeso</i>');
+    }
+    if (imcCalculado >= 30) {
+        imprimir('IMC considerado como <i>Obesidad</i>');
+    }
+    
+</script>
