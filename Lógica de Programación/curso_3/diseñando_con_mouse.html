@@ -1,0 +1,59 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    let pantalla = document.querySelector('canvas');
+    let pincel = pantalla.getContext('2d');
+
+    const colores = ['yellow','blue','red'];
+    let pos_paleta = dibujarPaleta();
+    let puedoDibujar = false;
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = 'blue';
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();  
+        }
+
+    }    
+
+    function habilitarDibujar() {
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+        puedoDibujar = false;
+    }
+
+    function dibujarPaleta(){
+
+        const atts = [];
+        let xpos = 0;
+        
+        colores.forEach((key,index) => {         
+            pincel.fillStyle = key;
+            pincel.fillRect(xpos,0,50,50);
+            atts.push(xpos);
+            xpos+=50;
+        });
+        
+        return atts;
+    }
+    
+    pantalla.onmousemove = dibujarCirculo;
+    pantalla.onmousedown = habilitarDibujar;
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    // console.log(pantalla.getBoundingClientRect());
+    
+    dibujarPaleta();
+
+</script>

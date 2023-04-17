@@ -1,0 +1,50 @@
+<canvas width="600" height="400" style="border: 1px solid red;"> </canvas>
+<script>
+	var pantalla = document.querySelector("canvas");
+	var pincel = pantalla.getContext("2d");
+
+	pincel.fillStyle = 'grey';
+    pincel.fillRect(0,0,600,400);
+
+    function exibirAlerta(evento){
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        console.log('Usted hizo un click en las posiciones      x: '+x+'      y: '+y);
+    }
+
+    function dibujarCirculo(evento){
+        let x = evento.pageX - pantalla.offsetLeft;
+        let y = evento.pageY - pantalla.offsetTop;
+        let pi = 2*3.14;
+        const colores = ['red','blue','orange','black','green','violet','yellow']
+        // Para dibjar un círculo se debe tener en cuenta lo siguiente:
+
+        /* Cuando se dibuja un círculo en la etiqueta canvas de HTML, se debe llamar a la función beginPath()
+           antes de llamar a la función arc(). Esto asegura que el círculo se dibuje como una nueva forma 
+           independiente y no afecte las formas anteriores que se han dibujado en el mismo lienzo.
+        */
+
+        pincel.fillStyle = colores[Math.round(Math.random()*colores.length)]; // Indicamos el color
+        pincel.beginPath(); // Usando esta funcion indicamos que el círculo que se dibujará tendrá sus 
+                            // coordenadas independientes de las demás que podamos tener en el resto del code
+    
+        pincel.arc(x,y,10,0,2*3.14);
+
+        /* PARÁMETROS:
+            1. posición en x
+            2. posición en y
+            3. radio del círculo
+            4. ángulo inicial
+            5. ángulo final
+        */
+
+        pincel.fill(); // Usamos .fill() para que aparezca lo que anteriormente estábamos "armando".
+                       // O rellenamos lo que anteriormente estábamos codificando
+
+        console.log('Usted hizo un click en las posiciones      x: '+x+'      y: '+y);
+
+    }
+
+    pantalla.onclick = dibujarCirculo;
+</script>

@@ -22,18 +22,24 @@
     }
 
     function dibujarBarra(x,y,serie,colores,texto) {
+
+        let acumulador = y;
+
         escribirTexto(x,y-10,texto);
-        dibujarRectangulo(x,y,50,50,'red')
+        
+        serie.forEach((key,index) => {
+
+            if (index === 0){           
+                dibujarRectangulo(x,acumulador,50,key,colores[index]);
+            }else{
+                acumulador+=serie[index-1];            
+                dibujarRectangulo(x,acumulador,50,key,colores[index]);        
+            }            
+
+        });
     }
 
-    dibujarBarra(100,100,serie2009,colores,'2009');
+    dibujarBarra(50,50,serie2009,colores,'2009');
+    dibujarBarra(150,50,serie2019,colores,'2019');
 
-
-    /* escribirTexto(100,90,'2009');
-    dibujarRectangulo(100,100,100,50,'blue');
-
-    escribirTexto(300,90,'2009');
-    dibujarRectangulo(300,100,100,50,'blue');
- */
-
-</script>   
+</script>

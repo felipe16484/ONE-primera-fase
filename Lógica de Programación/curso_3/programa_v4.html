@@ -1,0 +1,68 @@
+<canvas width="600" height="400" style="border: 1px solid red;"> </canvas>
+<script>
+	let pantalla = document.querySelector("canvas");
+	let pincel = pantalla.getContext("2d");
+    let x = 0;
+    let final = false;
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0,0,600,400); 
+
+    function crearCirculos (x,y,radio) {
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla(){
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function actualizarPantalla(){
+
+        if(final === false){
+            
+            limpiarPantalla();
+            pincel.fillStyle = 'lightgrey';
+            pincel.fillRect(0,0,600,400); 
+            crearCirculos(x,20,10);
+            x++;
+
+            if(x===600){
+                final = true;
+            }
+
+        }else{
+
+            limpiarPantalla();
+            pincel.fillStyle = 'lightgrey';
+            pincel.fillRect(0,0,600,400); 
+            crearCirculos(x,20,10);
+            x--;
+
+            if(x===0){
+                final = false;
+            }
+        }
+        
+    }
+    setInterval(actualizarPantalla,5);
+
+    /*  SOLUCIÓN DESDE EL CURSO:
+    
+        var sentido = 1;
+
+    function actualizarPantalla(){
+
+        limpiarPantalla();
+        if(x > 600){
+            sentido = -1;
+        }else if(x < 0){
+            sentido = 1;
+        }
+
+        disenharCircunferencia(x,20,10);
+        x = x + sentido;
+    } */
+</script>
