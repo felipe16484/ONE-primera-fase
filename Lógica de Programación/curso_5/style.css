@@ -1,36 +1,40 @@
-.header {
+body {
+    flex-wrap: wrap;
+}
+
+header {
     background-color: #BBBBBB;
     padding: 20px 0;
 }
 
-.caja {    
-    position: relative;
+.caja{
     width: 940px;
+    position: relative;
     margin: 0 auto;
 }
 
-nav {
+nav{
     position: absolute;
-    top: 110px;
+    top:110px;
     right: 0;
 }
 
 nav li{
-    display: inline-block;
+    display: inline;
     margin: 0 0 0 15px;
 }
 
-nav a {
+nav a{
     text-transform: uppercase;
-    color: #000;
+    color: #000000;
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover{
     color: #c78c19;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .productos{
@@ -38,6 +42,7 @@ nav a:hover {
     margin: 0 auto;
     padding: 50px;
 }
+
 
 .productos li{
     display: inline-block;
@@ -47,26 +52,19 @@ nav a:hover {
     margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;
-    border: 2px solid black;
-
+    border: 2px solid #000000;
     border-radius: 10px;
-
-    *border-top-left-radius: 10px;
-    *border-top-right-radius: 25px;
-    *border-bottom-right-radius: 40px;
-    *border-bottom-left-radius: 50px;
 }
 
 .productos li:hover{
-    border-color: #c78c19;
-    cursor: pointer;
+    border-color:#c78c19;
 }
 
 .productos li:active{
-    border-color: #088c19;
+    border-color:#088c19;
 }
 
-.productos h2 {
+.productos h2{
     font-size: 30px;
     font-weight: bold;
 }
@@ -75,24 +73,33 @@ nav a:hover {
     font-size: 33px;
 }
 
-.productoDescripcion{
+.producto-descripcion{
     font-size: 18px;
 }
 
-.productoPrecio {
+.producto-precio{
     font-size: 20px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top:10px;
 }
 
-footer {
-    text-align: center;
-    background: url(imagenes/bg.jpg);
+footer{
+    display: flex;
+    position: absolute;
+    align-self: flex-end;
+    top: 0;
+    bottom: 0;
     padding: 40px;
+    /* align-self: flex-end; */
+    background-color:black;
+    line-height: 3;
+    text-align: center;
+    max-width: 100%;
+    background: url(imagenes/bg.jpg);
 }
 
-footer p.copyright {
-    color: #ffffff;
-    font-size: 16px;
-    margin-bottom: 20px;
+.copyright{
+    color:#FFFFFF;
+    font-size: 13px;
+    margin:20px;
 }
