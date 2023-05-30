@@ -34,17 +34,18 @@ encrypt_button.addEventListener('click',() => {
         output_no_image.classList.remove('hidden');
 
         for (let i = 0; i < input_text.value.length; i++) {
-            
-            let index = arr_vowels.indexOf(input_text.value[i]);
 
-            if (index !== -1){
-                final_encrypt += arr_vowels_encrypt[i];
+            let index = arr_vowels.indexOf(input_text.value[i]);
+            
+            if(index !== -1) {
+                final_encrypt += arr_vowels_encrypt[index];
             }else {
-                final_encrypt += arr_vowels[i];
+                final_encrypt += input_text.value[i];
             }
+            
         }
-        
-        output_text.value = final_encrypt.toString();
+
+        output_text.value = final_encrypt;
 
     }
 
@@ -55,5 +56,20 @@ decrypt_button.addEventListener('click',() => {
 });
 
 copy_button.addEventListener('click',() => {
-    alert('Hola3')
+    
+    if (output_text.value !== ''){
+    
+        let temp = document.createElement("textarea");
+        temp.value = output_text.innerText;
+        document.body.appendChild(temp);
+
+        temp.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(temp);
+
+        alert('¡Se ha copiado el texto correctamente!');
+    } 
+
 });

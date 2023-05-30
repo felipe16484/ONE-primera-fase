@@ -211,6 +211,7 @@ button:hover {
     overflow-x: hidden;
     overflow-y: scroll;
     white-space: pre-line;
+    word-wrap: break-word;
 }
 
 #output_text:focus {
