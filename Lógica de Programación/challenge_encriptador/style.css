@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 main {
     background: #F3F5FC;
     margin: auto;
@@ -19,12 +21,17 @@ section:nth-child(1) {
 }
 
 section:nth-child(2) {
-    border: 1px solid blue;
+    width: 680px;
 }
 
 section:nth-child(3) {
-    border: 1px solid red;
+    background-color: #fff;
+    border-radius: 35px;
     width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input-section {
@@ -34,15 +41,47 @@ section:nth-child(3) {
     justify-content: space-between;
 }
 
-input#input-text {
+#input-text {
     background-color: transparent;
+    border: none;
     margin-top: 32px;
-    border: 1px solid red;
-    height: 840px; 
+    height: 800px;    
+    vertical-align: top;
+    resize: none;
+    font-family: 'Inter', sans-serif;
+    font-style:normal;
+    font-weight:500;
+    font-size: 32px;
+    line-height: 150%;
+    padding-top: 96px;
+    color: #0A3871;
+}
+
+#input-text:focus {
+    outline: unset;
+}
+
+#input-text::placeholder {
+    color: #0A3871;
+}
+
+#input-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+#input-text::-webkit-scrollbar-track {
+    background: #F3F5FC;
+}
+
+#input-text::-webkit-scrollbar-thumb {
+    background-color: #0A3871;
+    border-radius: 100px;
+    border: 0px solid #ffffff;
 }
 
 .info-image {
     cursor: text;
+    margin-top: 10px;
 }
 
 button {
@@ -52,6 +91,7 @@ button {
     cursor: pointer;
     background-color: transparent;
     transition: all 0.15s ease-in;
+    
 }
 
 button:hover {
@@ -70,4 +110,99 @@ button:hover {
 
 .decrypt {
     background: url(assets/decrypt_button.png);
+}
+
+.txt1 {
+    width: 336px;
+    height: 58px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #343A40;
+}
+
+.txt2 {
+    width: 336px;
+    height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #495057;
+}
+
+#output_image {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.copy{
+    padding: 24px;
+    width: 336px;
+    height: 67px;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+}
+
+.copy-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #0A3871;
+}
+
+#output_no_image {
+    padding: 32px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#output-text {
+    background-color: transparent;
+    resize: none;
+    font-family: 'Inter', sans-serif;
+    font-style:normal;
+    font-weight:500;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+    width: 328px;
+    height: 800px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#output-text:focus {
+    outline: unset;
+}
+
+#output-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+#output-text::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+#output-text::-webkit-scrollbar-thumb {
+    background-color: #0A3871;
+    border-radius: 100px;
+    border: 0px solid #ffffff;
+}
+ 
+
+.hidden {
+    display: none;
 }
