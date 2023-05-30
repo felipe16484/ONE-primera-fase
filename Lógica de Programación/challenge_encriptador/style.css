@@ -1,0 +1,73 @@
+main {
+    background: #F3F5FC;
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px;
+    width: 1360px;
+    height: 1024px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+section {
+    height: 100%;
+}
+
+section:nth-child(1) {
+    width: 120px;    
+}
+
+section:nth-child(2) {
+    border: 1px solid blue;
+}
+
+section:nth-child(3) {
+    border: 1px solid red;
+    width: 400px;
+}
+
+.input-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input#input-text {
+    background-color: transparent;
+    margin-top: 32px;
+    border: 1px solid red;
+    height: 840px; 
+}
+
+.info-image {
+    cursor: text;
+}
+
+button {
+    height: 67px;
+    width: 328px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.15s ease-in;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.encrypt {
+    background: url(assets/encrypt_button.png);
+}
+
+.decrypt {
+    background: url(assets/decrypt_button.png);
+}
