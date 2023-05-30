@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+body {
+    background-color: #131313;
+}
+
 main {
     background: #F3F5FC;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 25px;
     padding: 40px;
     width: 1360px;
     height: 1024px;
@@ -34,6 +38,29 @@ section:nth-child(3) {
     flex-direction: column;
 }
 
+.logo-image {    
+    --c: #0A3871; /* Border Color */
+    --b: 7px;    /* Border Thickness*/
+    --g: 5px;     /* Hover Gap */
+    
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%,var(--c) 0;
+
+    background: 
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g))
+       var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
+      conic-gradient(            at bottom var(--b) left  var(--b),var(--_g))
+       0   var(--_i,200%)/var(--_i,var(--b)) 200%  no-repeat;
+
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+}
+
+.logo-image:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+}
+
 .input-section {
     height: 100%;
     display: flex;
@@ -41,7 +68,7 @@ section:nth-child(3) {
     justify-content: space-between;
 }
 
-#input-text {
+#input_text {
     background-color: transparent;
     border: none;
     margin-top: 32px;
@@ -55,25 +82,26 @@ section:nth-child(3) {
     line-height: 150%;
     padding-top: 96px;
     color: #0A3871;
+    text-transform: lowercase;
 }
 
-#input-text:focus {
+#input_text:focus {
     outline: unset;
 }
 
-#input-text::placeholder {
+#input_text::placeholder {
     color: #0A3871;
 }
 
-#input-text::-webkit-scrollbar {
+#input_text::-webkit-scrollbar {
     width: 5px;
 }
 
-#input-text::-webkit-scrollbar-track {
+#input_text::-webkit-scrollbar-track {
     background: #F3F5FC;
 }
 
-#input-text::-webkit-scrollbar-thumb {
+#input_text::-webkit-scrollbar-thumb {
     background-color: #0A3871;
     border-radius: 100px;
     border: 0px solid #ffffff;
@@ -169,7 +197,7 @@ button:hover {
     justify-content: space-between;
 }
 
-#output-text {
+#output_text {
     background-color: transparent;
     resize: none;
     font-family: 'Inter', sans-serif;
@@ -177,32 +205,32 @@ button:hover {
     font-weight:500;
     font-size: 32px;
     line-height: 150%;
-    color: #0A3871;
+    color: #0A3871 !important;
     width: 328px;
     height: 800px;
     overflow-x: hidden;
     overflow-y: scroll;
+    white-space: pre-line;
 }
 
-#output-text:focus {
+#output_text:focus {
     outline: unset;
 }
 
-#output-text::-webkit-scrollbar {
+#output_text::-webkit-scrollbar {
     width: 5px;
 }
 
-#output-text::-webkit-scrollbar-track {
+#output_text::-webkit-scrollbar-track {
     background: #ffffff;
 }
 
-#output-text::-webkit-scrollbar-thumb {
+#output_text::-webkit-scrollbar-thumb {
     background-color: #0A3871;
     border-radius: 100px;
     border: 0px solid #ffffff;
-}
- 
+} 
 
 .hidden {
-    display: none;
+    display: none !important;
 }

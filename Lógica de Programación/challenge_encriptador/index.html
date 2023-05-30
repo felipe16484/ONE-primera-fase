@@ -11,23 +11,23 @@
     <main>
 
         <section>
-            <div class="logo">
-                <img src="assets/alura_logo.png" alt="Logo">
+            <div class="logo" id="image_logo" title="¡Click para limpiar el texto ingresado!">
+                <img src="assets/alura_logo.png" alt="Logo" class="logo-image">
             </div>
         </section>
             
         <section>
             <div class="input-section">
 
-                <textarea name="" id="input-text" placeholder="Ingrese el texto aquí"></textarea>
+                <textarea name="" id="input_text" placeholder="Ingrese el texto aquí"></textarea>
 
                 <div class="info-image">
                     <img src="assets/info_text.png" alt="">
                 </div>
 
                 <div class="buttons">
-                    <button class="encrypt"></button>
-                    <button class="decrypt"></button>
+                    <button class="encrypt" id="encrypt"></button>
+                    <button class="decrypt" id="decrypt"></button>
                 </div>
             </div>
         </section>
@@ -47,9 +47,9 @@
 
             <div class="hidden" id="output_no_image">
 
-                <p id="output-text"></p>
+                <output id="output_text"></output>
 
-                <button class="copy">
+                <button class="copy" id="copy_button">
                     <label class="copy-text">Copiar</label>
                 </button>
             </div>
