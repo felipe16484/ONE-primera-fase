@@ -18,8 +18,8 @@ image_logo.addEventListener('click',() => {
     output_text.value='';
 
     if (!output_no_image.classList.contains("hidden")) {
-        output_no_image.classList.toggle('hidden')
-        output_image.classList.toggle('hidden')
+        output_no_image.classList.toggle('hidden');
+        output_image.classList.toggle('hidden');
     }
 
 });
@@ -52,7 +52,38 @@ encrypt_button.addEventListener('click',() => {
 });
 
 decrypt_button.addEventListener('click',() => {
-    alert('Hola2')
+    
+    if (input_text.value !== ''){
+        
+        let temp = input_text.value;
+
+        if (!output_image.classList.contains("hidden")){
+
+            output_image.classList.add('hidden');
+            output_no_image.classList.remove('hidden');
+
+            temp = temp.replaceAll("enter", "e");
+            temp = temp.replaceAll("ai", "a");
+            temp = temp.replaceAll("imes", "i");
+            temp = temp.replaceAll("ober", "o");
+            temp = temp.replaceAll("ufat", "u");
+
+            output_text.value = temp;
+
+        }else{
+            
+            temp = temp.replaceAll("enter", "e");
+            temp = temp.replaceAll("ai", "a");
+            temp = temp.replaceAll("imes", "i");
+            temp = temp.replaceAll("ober", "o");
+            temp = temp.replaceAll("ufat", "u");
+
+            output_text.value = temp;
+
+        }
+
+    }
+
 });
 
 copy_button.addEventListener('click',() => {
@@ -65,7 +96,7 @@ copy_button.addEventListener('click',() => {
 
         temp.select();
 
-        document.execCommand("copy");
+        document.execCommand('copy');
 
         document.body.removeChild(temp);
 

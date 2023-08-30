@@ -1,4 +1,9 @@
+# Challege-Oracle-ONE
+
 ¡Bienvenidas y bienvenidos a nuestro primer desafío!
+
+> A parte de completar el Challege, agregué una lógica adicional que permite al momento de hacer click en el ícono de Alura, se limpian los campos de el ingreso y la muestra de la información.
+---
 
 Durante estas cuatro semanas, vamos a trabajar en una aplicación que encripta textos, así podrás intercambiar mensajes secretos con otras personas que sepan el secreto de la encriptación utilizada.
 
